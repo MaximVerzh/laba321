@@ -23,7 +23,7 @@ for i in range(len(adc_data)):
 
 for i in range(164):
     for j in range(0, 10000, 10):
-        if adc_data[2*i] < (np.polyval([0.01536, - 0.3958, 3.422, - 9.417, - 18.93, 241], j/1000) + 1) and adc_data[2*i] > (np.polyval([0.01536, - 0.3958, 3.422, - 9.417, - 18.93, 241], j/1000) - 1):
+        if adc_data[2*i] < (np.polyval([0.01536, - 0.3958, 3.422, - 9.417, - 18.93, 241], j/1000) + 0.5) and adc_data[2*i] > (np.polyval([0.01536, - 0.3958, 3.422, - 9.417, - 18.93, 241], j/1000) - 0.5):
             converted_data.append(j)
             break
 
@@ -44,7 +44,7 @@ for i in range(len(converted_data)):
      elif converted_data[i] >= 90.1:
          converted_data2.append(converted_data[i])
 
-converted_data1.insert(0, 90.5)
+
 
 for i in range(len(time)):
      if i < 14:
@@ -54,7 +54,7 @@ for i in range(len(time)):
 
 time2.insert(13, 1.37)
 time1.insert(0, 1.37)
-
+converted_data1.insert(0, 92)
 redline = []
 
 for i in range(len(converted_data)):
@@ -82,7 +82,7 @@ line2, = ax.plot(time2, converted_data2, c='orange', linewidth=2)
 ax.plot(redline, converted_data, '--', c ='red', linewidth = 3,)
 
 plt.xlim(xmin = 0.0543, xmax = 15)
-plt.ylim(ymin = 10.5, ymax = 93)
+plt.ylim(ymin = 10.5, ymax = 94)
 
 plt.title('Уровень воды в кювете после открытия торцевой двери', loc = 'center', fontsize = 15)
 line1.set_label("Уровень воды в кювете")
