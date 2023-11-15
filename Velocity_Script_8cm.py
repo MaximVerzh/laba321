@@ -46,16 +46,11 @@ for i in range(len(converted_data)):
      elif converted_data[i] >= 76.5:
          converted_data2.append(converted_data[i])
 
-converted_data2.insert(17, 76.5)
-
 for i in range(len(time)):
      if i < 17:
          time2.append(time[i])
      elif i > 17:
          time1.append(time[i])
-
-time1.insert(0, 1.55)
-
 
 redline = []
 for i in range(len(converted_data)):
@@ -64,8 +59,6 @@ for i in range(len(converted_data)):
 print(len(time), len(time1), len(time2))
 print(len(converted_data), len(converted_data1), len(converted_data2))
 print(converted_data, converted_data1, converted_data2, time1, time2)
-
-converted_data2.pop(17)
 
 fig, ax = plt.subplots(figsize=(200, 10), dpi=100)
 

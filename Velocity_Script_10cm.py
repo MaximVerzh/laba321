@@ -52,9 +52,9 @@ for i in range(len(time)):
      elif i > 14:
          time1.append(time[i])
 
-time2.insert(13, 1.37)
 time1.insert(0, 1.37)
 converted_data1.insert(0, 92)
+
 redline = []
 
 for i in range(len(converted_data)):
